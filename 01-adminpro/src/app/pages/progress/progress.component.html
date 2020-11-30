@@ -5,19 +5,19 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Striped Progress bar: {{ getPercent(progress1) }}</h4>
+        <h4 class="card-title">Striped Progress bar: {{ progress1 }} %</h4>
         <div class="progress m-t-20">
           <div class="progress-bar bg-primary progress-bar-striped active"
                style="height:10px;"
-               [style.width]="getPercent(progress1)"
+               [style.width.%]="progress1"
                role="progressbar"></div>
         </div>
         <hr>
-        <h4 class="card-title">Striped Progress bar: {{ getPercent(progress2) }}</h4>
+        <h4 class="card-title">Striped Progress bar: {{ progress2 }} %</h4>
         <div class="progress m-t-20">
           <div class="progress-bar bg-info progress-bar-striped active"
                style="height:10px;"
-               [style.width]="getPercent(progress2)"
+               [style.width.%]="progress2"
                role="progressbar"></div>
         </div>
       </div>
@@ -31,14 +31,14 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <app-incrementador [progress]="progress1" (valorSalida)="cambioValorHijo1($event)"></app-incrementador>
+        <app-incrementador [(progress)]="progress1" btnClass="info"></app-incrementador>
       </div>
     </div>
   </div>
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <app-incrementador [progress]="progress2" (valorSalida)="cambioValorHijo2($event)"></app-incrementador>
+        <app-incrementador [(progress)]="progress2" btnClass="danger"></app-incrementador>
       </div>
     </div>
   </div>

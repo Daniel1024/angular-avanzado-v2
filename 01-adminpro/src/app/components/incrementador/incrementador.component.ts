@@ -9,13 +9,20 @@ export class IncrementadorComponent {
   @Input()
   progress = 0;
 
-  set value(val: number) {
-    this.progress = val;
-    this.valorSalida.emit(val);
+  @Input()
+  set btnClass(name: string) {
+    this.className = (name > '') ? `btn btn-${ name }` : 'btn btn-primary';
   }
 
   @Output()
-  valorSalida = new EventEmitter<number>();
+  progressChange = new EventEmitter<number>();
+
+  className = 'btn btn-primary';
+
+  set value(val: number) {
+    this.progress = val;
+    this.progressChange.emit(val);
+  }
 
   cambiarValor(valor: number): void {
     if (valor >= 0 && this.progress >= 100) {
