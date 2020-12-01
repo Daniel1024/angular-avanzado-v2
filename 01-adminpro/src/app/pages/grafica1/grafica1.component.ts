@@ -7,15 +7,10 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
   styles: []
 })
 export class Grafica1Component implements OnInit {
-  // Doughnut
-  doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  doughnutChartData: MultiDataSet = [
+  labels1: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  data1: MultiDataSet = [
     [350, 450, 100]
   ];
-  colors: Color[] = [
-    { backgroundColor: ['#6857E6', '#009FEE', '#F02059'] }
-  ];
-
   constructor() {
   }
 
