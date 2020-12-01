@@ -34,4 +34,16 @@ export class IncrementadorComponent {
     }
   }
 
+  onChange(nuevoValor: number): void {
+    debugger;
+    if (nuevoValor > 100) {
+      nuevoValor = 100;
+    } else if (nuevoValor < 0) {
+      nuevoValor = 0;
+    }
+
+    this.value = nuevoValor;
+  }
+
+
 }
