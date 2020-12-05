@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Color, Label, MultiDataSet } from 'ng2-charts';
+import { Label, MultiDataSet } from 'ng2-charts';
 
 @Component({
   selector: 'app-grafica1',
@@ -7,9 +7,9 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
   styles: []
 })
 export class Grafica1Component implements OnInit {
-  labels1: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+  labels1: Label[] = ['Pan', 'Refresco', 'Tacos'];
   data1: MultiDataSet = [
-    [350, 450, 100]
+    [10, 15, 40]
   ];
   constructor() {
   }
