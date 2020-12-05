@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeService } from './shared/services/themeService';
+import { SettingService } from './services/setting.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,6 @@ export class AppComponent {
   title = 'adminpro';
 
   constructor(
-    themeService: ThemeService
-  ) {
-    themeService.init();
-  }
+    settingService: SettingService
+  ) { }
 }

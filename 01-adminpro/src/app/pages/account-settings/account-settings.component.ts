@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemesAccountSettings } from '../../shared/models/interfaces';
-import { ThemeService } from '../../shared/services/themeService';
+import { SettingService } from '../../services/setting.service';
 
 @Component({
   selector: 'app-account-settings',
@@ -28,15 +28,15 @@ export class AccountSettingsComponent implements OnInit {
   themeSelected = 'default';
 
   constructor(
-    private themeService: ThemeService
+    private settingService: SettingService
   ) { }
 
   ngOnInit(): void {
-    this.themeSelected = this.themeService.themeName;
+    this.themeSelected = this.settingService.themeName;
   }
 
   changeTheme(themeName: string): void {
-    this.themeService.setThemeUrl(themeName);
+    this.settingService.changeTheme(themeName);
     this.themeSelected = themeName;
   }
 

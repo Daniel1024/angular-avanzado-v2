@@ -3,21 +3,23 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ThemeService {
+export class SettingService {
   linkElementHtml = document.querySelector<HTMLLinkElement>('#theme');
 
-  constructor() { }
+  constructor() {
+    this.init();
+  }
 
   get themeName(): string {
     return localStorage.getItem('themeName') || 'default';
   }
 
-  setThemeUrl(themeName: string): void {
+  changeTheme(themeName: string): void {
     localStorage.setItem('themeName', themeName);
     this.linkElementHtml?.setAttribute('href', `assets/css/colors/${themeName}.css`);
   }
 
   init(): void {
-    this.setThemeUrl(this.themeName);
+    this.changeTheme(this.themeName);
   }
 }
